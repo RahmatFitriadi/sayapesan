@@ -140,7 +140,7 @@ public class LoginTenant extends javax.swing.JFrame {
                     if(username.equals(rs.getString("username"))&& password.equals(rs.getString("password"))){
                         JOptionPane.showMessageDialog(null, "Login Berhasil");
                         this.dispose();
-//                        new Inputmenu().setVisible(true);
+                        new Inputmenu().setVisible(true);
 
                     }
                 }

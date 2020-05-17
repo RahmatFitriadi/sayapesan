@@ -7,8 +7,11 @@ package Kantin;
 
 import Entity.Menu;
 import Entity.Tenant;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,10 +19,14 @@ import java.util.Map;
  */
 public class InputMenu extends javax.swing.JFrame {
 
+    private String sql;
+    Connection con = null;
+    PreparedStatement pst = null;
+
     /**
      * Creates new form InputMenu
      */
-    private HashMap<Integer, Menu> daftarMenu = new HashMap<>();
+//    private HashMap<Integer, Menu> daftarMenu = new HashMap<>();
     
     
     public InputMenu() {
@@ -122,19 +129,30 @@ public class InputMenu extends javax.swing.JFrame {
         String a = hargaMenu.getText();
         Integer hargamenu = Integer.parseInt(a);
         
-        
-        
-        Menu ten;
-        Tenant an = new Tenant(1, "Cafemocachino");
-        ten = new Menu (an, idmenu, namamenu, jenismenu, hargamenu);
-        daftarMenu.put(ten.idmenu,ten);
-        
-        
-        for (Map.Entry<Integer, Menu> entry : daftarMenu.entrySet()) {
-            Integer key = entry.getKey();
-            Menu value = entry.getValue();
-            value.printinfo();
+        try{
+            sql = "INSERT INTO menu (id, nama_menu, jeni_smenu, harga_menu) VALUES ('"+idmenu+"','"+namamenu+"','"+jenismenu+"','"+hargamenu+"');";
+            pst = con.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null,"Terimakasih telah mendaftarkan kantin "+namamenu);
+            hapus();
+         //   System.out.println("\n"+sql);
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
+        
+        
+        
+//        Menu ten;
+//        Tenant an = new Tenant(1, "Cafemocachino");
+//        ten = new Menu (an, idmenu, namamenu, jenismenu, hargamenu);
+//        daftarMenu.put(ten.idmenu,ten);
+//        
+//        
+//        for (Map.Entry<Integer, Menu> entry : daftarMenu.entrySet()) {
+//            Integer key = entry.getKey();
+//            Menu value = entry.getValue();
+//            value.printinfo();
+//        }
     }//GEN-LAST:event_tambahButActionPerformed
 
     /**
@@ -184,4 +202,8 @@ public class InputMenu extends javax.swing.JFrame {
     private javax.swing.JTextField namaMenu;
     private javax.swing.JButton tambahBut;
     // End of variables declaration//GEN-END:variables
+
+    private void hapus() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

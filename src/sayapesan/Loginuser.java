@@ -147,7 +147,7 @@ public class Loginuser extends javax.swing.JFrame {
                 if(username.equals(rs.getString("username"))&& password.equals(rs.getString("password"))){
                     JOptionPane.showMessageDialog(null, "Login Berhasil");
                     this.dispose();
-                    new LihatMenu().setVisible(true);
+                    new InputMenu().setVisible(true);
                     
                 }
             }

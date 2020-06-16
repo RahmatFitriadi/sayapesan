@@ -45,7 +45,7 @@ public class loginsebagai extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Log In As");
 
         cusbut.setBackground(new java.awt.Color(102, 153, 255));

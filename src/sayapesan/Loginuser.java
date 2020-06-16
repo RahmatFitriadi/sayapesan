@@ -66,6 +66,9 @@ public class Loginuser extends javax.swing.JFrame {
             }
         });
 
+        LogBut.setBackground(new java.awt.Color(51, 153, 255));
+        LogBut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LogBut.setForeground(new java.awt.Color(255, 255, 255));
         LogBut.setText("Login");
         LogBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +76,9 @@ public class Loginuser extends javax.swing.JFrame {
             }
         });
 
+        CancelBut.setBackground(new java.awt.Color(255, 51, 102));
+        CancelBut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CancelBut.setForeground(new java.awt.Color(255, 255, 255));
         CancelBut.setText("Cancel");
         CancelBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +86,7 @@ public class Loginuser extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel3.setText("Login Pemesan");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,10 +100,10 @@ public class Loginuser extends javax.swing.JFrame {
                 .addComponent(CancelBut)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PassForm, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                    .addComponent(UserForm, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                    .addComponent(PassForm)
+                    .addComponent(UserForm)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

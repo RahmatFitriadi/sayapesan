@@ -65,6 +65,9 @@ public class LoginTenant extends javax.swing.JFrame {
             }
         });
 
+        LogBut.setBackground(new java.awt.Color(0, 153, 255));
+        LogBut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LogBut.setForeground(new java.awt.Color(255, 255, 255));
         LogBut.setText("Login");
         LogBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +75,9 @@ public class LoginTenant extends javax.swing.JFrame {
             }
         });
 
+        CancelBut.setBackground(new java.awt.Color(255, 51, 102));
+        CancelBut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CancelBut.setForeground(new java.awt.Color(255, 255, 255));
         CancelBut.setText("Cancel");
         CancelBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +85,7 @@ public class LoginTenant extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel3.setText("Login Tenant");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

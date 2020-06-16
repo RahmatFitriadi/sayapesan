@@ -48,6 +48,9 @@ public class Customersignuptenant extends javax.swing.JFrame {
 
         jLabel4.setText("Password");
 
+        signupbut.setBackground(new java.awt.Color(51, 153, 255));
+        signupbut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        signupbut.setForeground(new java.awt.Color(255, 255, 255));
         signupbut.setText("Sign Up");
         signupbut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +58,9 @@ public class Customersignuptenant extends javax.swing.JFrame {
             }
         });
 
+        resetbut.setBackground(new java.awt.Color(255, 51, 102));
+        resetbut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        resetbut.setForeground(new java.awt.Color(255, 255, 255));
         resetbut.setText("Reset");
         resetbut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +68,9 @@ public class Customersignuptenant extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +105,7 @@ public class Customersignuptenant extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(212, 212, 212)
                         .addComponent(jButton3)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -20,8 +20,7 @@ public class InputMenu extends javax.swing.JFrame {
         DB.config();
         con = DB.con;
     }
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    @SuppressWarnings("unchecked")                    
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
@@ -97,61 +96,18 @@ public class InputMenu extends javax.swing.JFrame {
     }
 
     private void tambahButActionPerformed(java.awt.event.ActionEvent evt) {
-//        String b = idMenu.getText();
-//        Integer idmenu = Integer.parseInt(b);
         String namamenu = namaMenu.getText();
         String jenismenu = comJenis.getSelectedItem().toString();
         String a = hargaMenu.getText();
-//        Integer hargamenu = Integer.parseInt(a);
         
         try{
             sql = "INSERT INTO menu (nama_menu, jenis_menu, harga_menu) VALUES ('"+namamenu+"','"+jenismenu+"','"+a+"');";
             pst = con.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, namamenu+" Berhasil di masukkan kemenu ");
-            //   System.out.println("\n"+sql);
         } catch (Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-    
-        
-//        Menu ten;
-//        Tenant an = new Tenant(1, "Cafemocachino");
-//        ten = new Menu (an, idmenu, namamenu, jenismenu, hargamenu);
-//        daftarMenu.put(ten.idmenu,ten);
-        
-        
-//        for (Map.Entry<Integer, Menu> entry : daftarMenu.entrySet()) {
-//            Integer key = entry.getKey();
-//            Menu value = entry.getValue();
-//            value.printinfo();
-//        }
-//    }
-//    
-//    public static void main(String args[]) {
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(InputMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(InputMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(InputMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(InputMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new InputMenu().setVisible(true);
-//            }
-//            
-//        });
     }
 
     private javax.swing.JComboBox<String> comJenis;

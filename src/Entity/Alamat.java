@@ -7,7 +7,6 @@
 package Entity;
 
 /**
- *
  * @author Angiospermae
  */
 public class Alamat {

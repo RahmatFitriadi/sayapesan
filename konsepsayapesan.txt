@@ -1,0 +1,68 @@
+Nama aplikasi
+SayaPesan
+
+Ide aplikasi
+Ide apalikasi ini ketika dosen/staff ingin membeli makan pada saat istirahat namun
+terkendala waktu dimana waktu istirahat yang kurang ditambah tempat pembelian 
+makanan (kantin) jauh sehingga kurang efektif manakala dosen harus mengajar di jam selanjutnya.
+
+Deskripsi
+Aplikasi berbasis java yang digunakan untuk pemesanan makanan yang diperuntukan di dalam kampus
+dimana dalam aplikasi ini dapat di gunakan oleh pemesan, pengantar, Kantin.
+
+
+3 Role
+Pemesan
+Pemesan adalah user yang bertindak sebagai pemesan makanan ke kantin
+
+Pengantar
+Pengantar adalah user yang bertindak sebagai penjemput dan pengantar makanan dari kantin ke dosen/staff yang memesan
+
+Kantin
+Kantin adalah user yang bertindak sebagai yang mempunyai menu makanan atau minuman.
+
+
+
+Alur model 
+1. Pemesan
+	- Pilih Tenant
+	- Pilih Menu
+	- Jumlah pesanan
+	- Alamat pengiriman 
+		- Gedung? A,B
+		- Lantai? 2,1
+		- Ruang? d122
+	- Keterangan pemesanan? Pedaskah? Asinkah?
+	- Waktu pengiriman? 13.00 / 12.11
+2. Pengantar
+	- Lihat pengiriman
+		- Dari tenant mana?
+		- Makanan apa?
+		- Jumlah makanan?
+		- Kirim Kemana? (alamat pengiriman dari pemesan)
+		- Waktu pengiriman
+3. Kantin
+	- Edit menu
+		- CRUD menu
+		- CRUD harga
+		- CRUD diskon (jika diperlukan)
+	- Jam Buka tutup
+	- Lihat Pemesan (details pesanan dan pemesan)
+	- 
+
+Catatan
+- Untuk versi 1.0 sistem pembayaran hanya dilakukan COD (Cash On Delivery)
+
+
+Hal-hal yang harus dicapai
+- Konsep OOP
+- GUI
+- Database ( Bonus )
+- Data Collection
+
+
+JFrame
+Login
+Pengantar
+Pemesan 
+Kantin

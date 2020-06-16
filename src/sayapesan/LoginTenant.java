@@ -5,10 +5,12 @@
  */
 package sayapesan;
 
+import Koneksi.config;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import Kantin.*;
 
 /**
  *
@@ -25,6 +27,11 @@ public class LoginTenant extends javax.swing.JFrame {
      */
     public LoginTenant() {
         initComponents();
+        setLocationRelativeTo(null);
+        config DB = new config();
+        DB.config();
+        con = DB.con;
+        stmt = DB.stmt;
     }
 
     /**
@@ -45,11 +52,6 @@ public class LoginTenant extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("masukan usesrname");
-        setAlwaysOnTop(true);
-        setBackground(new java.awt.Color(255, 51, 204));
-        setFocusableWindowState(false);
-        setForeground(new java.awt.Color(255, 51, 51));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel1.setText("Username");
@@ -57,17 +59,12 @@ public class LoginTenant extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel2.setText("Password");
 
-        UserForm.setForeground(new java.awt.Color(51, 51, 51));
-        UserForm.setToolTipText("Masukan username");
         UserForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UserFormActionPerformed(evt);
             }
         });
 
-        LogBut.setBackground(new java.awt.Color(102, 102, 255));
-        LogBut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        LogBut.setForeground(new java.awt.Color(255, 255, 255));
         LogBut.setText("Login");
         LogBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,9 +72,6 @@ public class LoginTenant extends javax.swing.JFrame {
             }
         });
 
-        CancelBut.setBackground(new java.awt.Color(255, 51, 51));
-        CancelBut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        CancelBut.setForeground(new java.awt.Color(255, 255, 255));
         CancelBut.setText("Cancel");
         CancelBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,46 +79,47 @@ public class LoginTenant extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel3.setText("   SayaPesan");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setText("Login Tenant");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(LogBut, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CancelBut))
-                        .addComponent(jLabel2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(PassForm, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(UserForm, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1)
-                        .addComponent(UserForm, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                        .addComponent(PassForm, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)))
-                .addGap(29, 29, 29))
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(LogBut, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CancelBut)
+                        .addGap(10, 10, 10)))
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(UserForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(6, 6, 6)
+                .addGap(9, 9, 9)
                 .addComponent(PassForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CancelBut)
-                    .addComponent(LogBut))
-                .addContainerGap(52, Short.MAX_VALUE))
+                    .addComponent(LogBut)
+                    .addComponent(CancelBut))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
@@ -150,8 +145,7 @@ public class LoginTenant extends javax.swing.JFrame {
                     if(username.equals(rs.getString("username"))&& password.equals(rs.getString("password"))){
                         JOptionPane.showMessageDialog(null, "Login Berhasil");
                         this.dispose();
-//                        new Inputmenu().setVisible(true);
-
+                        new InputMenu().setVisible(true);
                     }
                 }
                 else {
@@ -212,4 +206,5 @@ public class LoginTenant extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -75,7 +75,7 @@ public class LoginTenant extends javax.swing.JFrame {
             }
         });
 
-        CancelBut.setBackground(new java.awt.Color(255, 102, 102));
+        CancelBut.setBackground(new java.awt.Color(255, 51, 51));
         CancelBut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         CancelBut.setForeground(new java.awt.Color(255, 255, 255));
         CancelBut.setText("Cancel");

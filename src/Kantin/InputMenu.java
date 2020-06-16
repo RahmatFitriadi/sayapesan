@@ -42,7 +42,7 @@ public class InputMenu extends javax.swing.JFrame {
         idMenu = new javax.swing.JTextField();
         namaMenu = new javax.swing.JTextField();
         hargaMenu = new javax.swing.JTextField();
-        comJenis = new javax.swing.JComboBox<>();
+        comJenis = new javax.swing.JComboBox<String>();
         tambahBut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,8 +55,11 @@ public class InputMenu extends javax.swing.JFrame {
 
         jLabel4.setText("Jenis Menu");
 
-        comJenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Choose ---", "Makanan", "Minuman" }));
+        comJenis.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-- Choose ---", "Makanan", "Minuman" }));
 
+        tambahBut.setBackground(new java.awt.Color(51, 153, 255));
+        tambahBut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tambahBut.setForeground(new java.awt.Color(255, 255, 255));
         tambahBut.setText("Tambah");
         tambahBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,20 +73,20 @@ public class InputMenu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(idMenu)
-                    .addComponent(namaMenu)
-                    .addComponent(hargaMenu)
-                    .addComponent(comJenis, 0, 153, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tambahBut)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(tambahBut)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(idMenu)
+                            .addComponent(namaMenu)
+                            .addComponent(hargaMenu)
+                            .addComponent(comJenis, 0, 153, Short.MAX_VALUE))))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
